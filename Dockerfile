@@ -2,7 +2,8 @@ FROM 0x01be/coq as build
 
 RUN apk add --no-cache --virtual bedrock2-build-dependencies \
     git \
-    build-base
+    build-base \
+    python3-dev
 
 ENV BEDROCK2_REVISION master
 RUN git clone --recursive --branch ${BEDROCK2_REVISION} https://github.com/mit-plv/bedrock2.git /bedrock2
