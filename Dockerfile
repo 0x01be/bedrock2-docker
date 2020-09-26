@@ -5,6 +5,8 @@ RUN apk add --no-cache --virtual bedrock2-build-dependencies \
     build-base \
     python3-dev
 
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
 ENV BEDROCK2_REVISION master
 RUN git clone --recursive --branch ${BEDROCK2_REVISION} https://github.com/mit-plv/bedrock2.git /bedrock2
 
